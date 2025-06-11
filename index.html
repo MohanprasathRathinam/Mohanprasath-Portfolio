@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohanprasath R - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Specific styles for video background */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Ensures video is behind content */
+            border-radius: 1.5rem; /* Matches parent's rounded corners */
+            pointer-events: none; /* Allows clicks through video */
+        }
+
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* Apply rotation and translate to center after rotation */
+            transform: translate(-50%, -50%) rotate(270deg); /* Rotated 270 degrees clockwise */
+            object-fit: cover; /* Ensures video covers the area without distortion */
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Dark overlay for text readability */
+            z-index: 1; /* Above video, below content */
+            border-radius: 1.5rem;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Ensures content is on top of overlay */
+        }
+
+        /* New CSS for glowing effect on cards/sections */
+        .glowing-card {
+            /* Inherit default shadow from Tailwind's shadow-md */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            /* Smooth transition for shadow and transform */
+            transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
+            border-radius: 0.5rem; /* Ensure rounded corners for the glow */
+        }
+
+        .glowing-card:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            /* Pure purple layered box-shadow for the glow effect */
+            box-shadow:
+                0 0 10px rgba(128, 0, 128, 0.7),   /* Purple glow */
+                0 0 20px rgba(138, 43, 226, 0.6),  /* Blue-violet glow */
+                0 0 30px rgba(147, 112, 219, 0.5),  /* Medium purple glow */
+                0 0 40px rgba(186, 85, 211, 0.4);  /* Orchid glow */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 text-gray-800">
+    <div class="container mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
+        <!-- Navigation Bar -->
+        <nav class="bg-blue-800 text-white p-4 sticky top-0 z-50 shadow-md">
+            <div class="flex justify-between items-center flex-wrap">
+                <a href="#hero" class="text-xl font-bold rounded-lg hover:bg-blue-700 px-3 py-2 transition-colors duration-200">MOHANPRASATH R</a>
+                <div class="space-x-4 flex-wrap hidden md:flex">
+                    <a href="#about" class="hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">About</a>
+                    <a href="#skills" class="hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Skills</a>
+                    <a href="#projects" class="hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Projects</a>
+                    <a href="#experience" class="hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Experience</a>
+                    <a href="#contact" class="hover:text-blue-200 px-3 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200">Contact</a>
+                </div>
+                <!-- Mobile Menu Button (Hamburger) - for future implementation if needed -->
+                <button class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="hero" class="relative text-white py-20 px-8 sm:px-12 md:px-16 flex flex-col items-center justify-center text-center rounded-b-2xl overflow-hidden">
+                <!-- Video Background -->
+                <div class="video-background">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://ik.imagekit.io/4kaw2vwq8/1727269618016.mp4?updatedAt=1749655190320" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-overlay"></div> <!-- Overlay for text readability -->
+
+                <div class="hero-content">
+                    <div class="mb-6">
+                        <!-- Placeholder for profile image -->
+                        <img src="https://placehold.co/150x150/d1d5db/4b5563?text=Profile" alt="Mohanprasath R Profile" class="w-36 h-36 rounded-full border-4 border-white shadow-lg object-cover mx-auto">
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+                        Mohanprasath R
+                    </h1>
+                    <p class="text-lg sm:text-xl mb-8 max-w-2xl">
+                        Computer Science Engineer | Cyber Security Enthusiast | Backend & Cloud Development Aspirant
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 text-sm sm:text-base">
+                        <a href="mailto:mohanprasathrathinam@gmail.com" class="bg-white text-blue-700 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-100 transition-all duration-300 transform hover:scale-105">
+                            Email Me
+                        </a>
+                        <a href="[Your LinkedIn Profile]" target="_blank" rel="noopener noreferrer" class="bg-blue-700 border border-white text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105">
+                            View LinkedIn
+                        </a>
+                        <a href="#" class="bg-blue-700 border border-white text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105" onclick="alert('Download CV functionality not implemented in this demo.'); return false;">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Me Section -->
+            <section id="about" class="p-8 sm:p-12 md:p-16 bg-white border-b border-gray-200">
+                <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">About Me</h2>
+                <div class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700">
+                    <p class="mb-4">
+                        I am a highly motivated and detail-oriented Computer Science Engineering student specializing in <strong class="font-semibold text-blue-700">Cyber Security</strong>. My academic journey at Muthayammal Engineering College has equipped me with a strong foundation in core programming concepts and problem-solving methodologies.
+                    </p>
+                    <p class="mb-4">
+                        Through hands-on workshops and valuable internships, I have cultivated strong programming, problem-solving, and communication skills. My practical experience includes work in <strong class="font-semibold text-blue-700">IoT & Full Stack Development</strong> and <strong class="font-semibold text-blue-700">Cyber Security</strong>, where I've engaged with real-world challenges.
+                    </p>
+                    <p>
+                        I am eager to apply my technical acumen and passion for security and development in <strong class="font-semibold text-blue-700">backend or cloud-focused development roles</strong> within a dynamic tech environment. My goal is to contribute to innovative solutions and grow as a versatile engineer.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="p-8 sm:p-12 md:p-16 bg-gray-50 border-b border-gray-200">
+                <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Technical Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                    <!-- Programming Languages -->
+                    <div class="bg-white p-6 glowing-card">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-700">Programming Languages</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            <li>Core Java, Java</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <!-- Web Technologies -->
+                    <div class="bg-white p-6 glowing-card">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-700">Web Technologies</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                    </div>
+                    <!-- Core Concepts -->
+                    <div class="bg-white p-6 glowing-card">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-700">Core Concepts</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            <li>OOPs Concepts</li>
+                            <li>Cyber Security Principles</li>
+                        </ul>
+                    </div>
+                    <!-- Tools & Platforms -->
+                    <div class="bg-white p-6 glowing-card">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-700">Tools & Platforms</h3>
+                        <ul class="list-disc list-inside space-y-1 text-gray-700">
+                            <li>Nmap</li>
+                            <li>Figma</li>
+                            <li>Visual Studio Code</li>
+                            <li>MS Office</li>
+                            <li>Arduino IDE</li>
+                            <li>Cyber Security Tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="p-8 sm:p-12 md:p-16 bg-white border-b border-gray-200">
+                <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Featured Projects</h2>
+                <!-- Removed grid classes to allow single project to span naturally -->
+                <div class="max-w-4xl mx-auto">
+                    <!-- Project 1: Automation of Hydroponic System -->
+                    <div class="bg-gray-50 p-6 glowing-card">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-700">Automation of Hydroponic System</h3>
+                        <p class="text-gray-600 text-sm mb-4">Role: Developer</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Designed and developed an automated system to continuously monitor plant health and water levels using **IoT sensors** and **Arduino**.</li>
+                            <li>Implemented **real-time monitoring capabilities** which significantly reduced the need for manual intervention, optimizing system efficiency.</li>
+                            <li>**Key Technologies:** Arduino IDE, IoT Sensors</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Experience Section -->
+            <section id="experience" class="p-8 sm:p-12 md:p-16 bg-gray-50 border-b border-gray-200">
+                <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Professional Experience & Training</h2>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="bg-white p-6 glowing-card">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Cyber Security Intern</h3>
+                        <p class="text-blue-700 font-medium mb-1">AICL</p>
+                        <p class="text-gray-600 text-sm">June 2023 - August 2023</p>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-gray-700">
+                            <li>Assisted in **network security audits** and vulnerability assessments to identify potential risks.</li>
+                            <li>Gained hands-on experience with **intrusion detection systems** and security tools.</li>
+                            <li>Contributed to the analysis and generation of security reports.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 glowing-card">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">IoT & Full Stack Development Intern</h3>
+                        <p class="text-blue-700 font-medium mb-1">RED MIND Technologies</p>
+                        <p class="text-gray-600 text-sm">December 2022 - January 2023</p>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-gray-700">
+                            <li>Developed **front-end interfaces** for IoT dashboards using web technologies.</li>
+                            <li>Assisted in **backend API development** to facilitate data exchange between devices and web platforms.</li>
+                            <li>Gained practical knowledge in integrating **IoT devices** and handling real-time data.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 glowing-card">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Certifications & Training</h3>
+                        <ul class="list-disc list-inside ml-4 mt-2 text-gray-700">
+                            <li>**Cyber Suraksha Certification** - TATA STRIVE</li>
+                            <li>**Workshop:** Future of AI in Cyber Security - Manikas Infotech</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="p-8 sm:p-12 md:p-16 bg-white border-b border-gray-200">
+                <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Education</h2>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="bg-gray-50 p-6 glowing-card">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Bachelor of Engineering - Computer Science Engineering (Cyber Security)</h3>
+                        <p class="text-blue-700 font-medium mb-1">Muthayammal Engineering College, Rasipuram</p>
+                        <p class="text-gray-600 text-sm">2025 (Pursuing) | CGPA: 7.25</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="p-8 sm:p-12 md:p-16 bg-blue-700 text-white text-center rounded-b-2xl">
+                <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+                <p class="text-lg mb-6">
+                    I'm currently seeking backend or cloud-focused development roles. Feel free to connect!
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <p class="flex items-center text-lg">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"></path></svg>
+                        +91 93456 32047
+                    </p>
+                    <a href="mailto:mohanprasathrathinam@gmail.com" class="flex items-center text-lg hover:text-blue-200 transition-colors duration-200">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                        mohanprasathrathinam@gmail.com
+                    </a>
+                    <a href="[Your LinkedIn Profile]" target="_blank" rel="noopener noreferrer" class="flex items-center text-lg hover:text-blue-200 transition-colors duration-200">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.364 9.364l-4.95 4.95L10 16.364l-1.414-1.414-2.121 2.121a1 1 0 01-1.414-1.414l2.121-2.121-1.414-1.414-4.95 4.95L2 15.636l4.95-4.95L4.05 9.364l-1.414 1.414L.293 8.293a1 1 0 010-1.414l7-7a1 1 0 011.414 0L17.707 6.88a1 1 0 010 1.414l-1.414 1.414z" clip-rule="evenodd"></path></svg>
+                        LinkedIn Profile
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-gray-800 text-white text-center p-4 text-sm rounded-b-2xl">
+            <p>&copy; 2025 Mohanprasath R. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
